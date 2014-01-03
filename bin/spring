@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+unless defined?(Spring)
+  require "rubygems"
+  require "bundler"
+
+  ENV["GEM_HOME"] = ""
+  ENV["GEM_PATH"] = Bundler.bundle_path.to_s
+  Gem.paths = ENV
+
+  Gem.try_activate("spring/binstub")
+  require "spring/binstub"
+end
